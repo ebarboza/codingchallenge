@@ -19,7 +19,8 @@ Coding challenge project is a implementation of a Project Managenment Website
 	- Check connection string definition into Web.config file
 	- Run Migrations scripts to create the initial DB. Follow these steps:
 		- Open Package Manage Console from VS 2017.
-		- Run the command: **Update-Database**
+		- Select CodingChallenge.WebApi as default project .
+		- Run the command: ** Update-Database **
 	- Check database, tables and data were created in SQL Server.
 	- Right click on CodingChallenge.WebApi project
 		- Select Debug -> Start new instance

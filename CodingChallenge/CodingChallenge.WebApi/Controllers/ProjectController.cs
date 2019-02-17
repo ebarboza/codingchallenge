@@ -13,7 +13,7 @@ namespace CodingChallenge.WebApi.Controllers
             this.projectService = projectService;
         }
 
-        //GET: api/project
+        //GET: api/project/{userId}
         [HttpGet]
         [Route("api/project/{userId}")]
         public IHttpActionResult Get(int userId)

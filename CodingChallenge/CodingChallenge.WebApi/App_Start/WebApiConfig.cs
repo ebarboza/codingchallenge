@@ -11,10 +11,8 @@ namespace CodingChallenge.WebApi
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
             AutofacWebapiConfig.Initialize(GlobalConfiguration.Configuration);
 
-            // Web API routes
             config.MapHttpAttributeRoutes();
             var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);

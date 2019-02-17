@@ -2,9 +2,7 @@ namespace CodingChallenge.WebApi.Migrations
 {
     using CodingChallenge.WebApi.Models;
     using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<CodingChallenge.WebApi.Models.CodingChallengeContext>
     {
@@ -36,7 +34,7 @@ namespace CodingChallenge.WebApi.Migrations
             );
 
             //User #1 
-            context.UserProject.AddOrUpdate(x => x.UserId,
+            context.UserProject.AddOrUpdate(x => new { x.UserId , x.ProjectId },
                 new UserProject() { UserId = 1, ProjectId = 1, IsActive = true, AssignedDate = DateTime.Now.AddDays(-10) },
                 new UserProject() { UserId = 1, ProjectId = 3, IsActive = true, AssignedDate = DateTime.Now.AddDays(5) },
                 new UserProject() { UserId = 1, ProjectId = 5, IsActive = false, AssignedDate = DateTime.Now.AddDays(30) },
@@ -45,22 +43,22 @@ namespace CodingChallenge.WebApi.Migrations
                 );
 
             //User #2
-            context.UserProject.AddOrUpdate(x => x.UserId,
-                new UserProject() { UserId = 2, ProjectId = 2, IsActive = false, AssignedDate = DateTime.Now.AddDays(-10) },
-                new UserProject() { UserId = 2, ProjectId = 4, IsActive = true, AssignedDate = DateTime.Now.AddDays(-10) },
-                new UserProject() { UserId = 2, ProjectId = 6, IsActive = false, AssignedDate = DateTime.Now.AddDays(-10) },
-                new UserProject() { UserId = 2, ProjectId = 8, IsActive = true, AssignedDate = DateTime.Now.AddDays(-10) },
-                new UserProject() { UserId = 2, ProjectId = 10, IsActive = true, AssignedDate = DateTime.Now.AddDays(-10) }
-                );
+            context.UserProject.AddOrUpdate(x => new { x.UserId , x.ProjectId },
+                 new UserProject() { UserId = 2, ProjectId = 2, IsActive = false, AssignedDate = DateTime.Now.AddDays(-10) },
+                 new UserProject() { UserId = 2, ProjectId = 4, IsActive = true, AssignedDate = DateTime.Now.AddDays(-10) },
+                 new UserProject() { UserId = 2, ProjectId = 6, IsActive = false, AssignedDate = DateTime.Now.AddDays(-10) },
+                 new UserProject() { UserId = 2, ProjectId = 8, IsActive = true, AssignedDate = DateTime.Now.AddDays(-10) },
+                 new UserProject() { UserId = 2, ProjectId = 10, IsActive = true, AssignedDate = DateTime.Now.AddDays(-10) }
+                 );
 
-            //User #3 
-            context.UserProject.AddOrUpdate(x => x.UserId,
-                new UserProject() { UserId = 3, ProjectId = 1, IsActive = true, AssignedDate = DateTime.Now.AddDays(-10) },
-                new UserProject() { UserId = 3, ProjectId = 2, IsActive = true, AssignedDate = DateTime.Now.AddDays(-10) },
-                new UserProject() { UserId = 3, ProjectId = 5, IsActive = true, AssignedDate = DateTime.Now.AddDays(15) },
-                new UserProject() { UserId = 3, ProjectId = 8, IsActive = true, AssignedDate = DateTime.Now.AddDays(5) },
-                new UserProject() { UserId = 3, ProjectId = 9, IsActive = false, AssignedDate = DateTime.Now.AddDays(-10) }
-                );
+             //User #3 
+             context.UserProject.AddOrUpdate(x => new { x.UserId , x.ProjectId },
+                 new UserProject() { UserId = 3, ProjectId = 1, IsActive = true, AssignedDate = DateTime.Now.AddDays(-10) },
+                 new UserProject() { UserId = 3, ProjectId = 2, IsActive = true, AssignedDate = DateTime.Now.AddDays(-10) },
+                 new UserProject() { UserId = 3, ProjectId = 5, IsActive = true, AssignedDate = DateTime.Now.AddDays(15) },
+                 new UserProject() { UserId = 3, ProjectId = 8, IsActive = true, AssignedDate = DateTime.Now.AddDays(5) },
+                 new UserProject() { UserId = 3, ProjectId = 9, IsActive = false, AssignedDate = DateTime.Now.AddDays(-10) }
+                 );
         }
     }
 }

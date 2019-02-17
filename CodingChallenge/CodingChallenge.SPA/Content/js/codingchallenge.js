@@ -16,8 +16,7 @@ function getFullName(item) {
 
 function getProjects()
 {
-    var projectsBody = '';
-    
+    var projectsBody = '';    
     var userIdSelected = $("#projectSelect option:selected").val();
 
     if (userIdSelected != null && userIdSelected != "")
@@ -43,8 +42,8 @@ function getProjects()
     else {
         $('#projectsTable tbody').html("");
     }
-
 }
+
 function getDateTimeFormatted(date)
 {
     var dateConverted = new Date(date);

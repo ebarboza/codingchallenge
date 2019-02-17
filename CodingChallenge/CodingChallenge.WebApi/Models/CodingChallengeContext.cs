@@ -6,7 +6,7 @@ namespace CodingChallenge.WebApi.Models
     public class CodingChallengeContext : DbContext
     {
         public CodingChallengeContext()
-            : base("DefaultConnection") { }
+            : base("CodingChallenge") { }
 
         public IDbSet<User> User { get; set; }
         public IDbSet<Project> Project { get; set; }
